@@ -1,6 +1,7 @@
 package fileScannerInt.Utility;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -16,16 +17,15 @@ public class ProgramTwoUtility
 	+ " each node using both a preorder traversal"
 	+ " then a breadth-first traversal."
 	);
-		Node tree = Node.getExampleTree();
-		System.out.println(getTraversalPreOrderPath(tree));
-		System.out.println(getTraversalBreadthFirstPath(tree));
+		System.out.println("Preorder: " + getTraversalPreOrderPath(Node.getExampleTree()));
+		System.out.println("Depth first: " + getTraversalBreadthFirstPath(Node.getExampleTree()));
 		
 	}
 
 	private static String getTraversalBreadthFirstPath(Node tree)
 	{
 		String result = "";
-		Queue<Node> queue= new PriorityQueue<Node>();
+		Queue<Node> queue= new LinkedList<Node>();
 		queue.add(tree);
 		
 		while (!queue.isEmpty())
@@ -43,12 +43,16 @@ public class ProgramTwoUtility
 
 	private static String getTraversalPreOrderPath(Node tree)
 	{
-		List<String> childrenPaths = new ArrayList<String>();
-		for (Node child : tree.children)
+		//List<String> childrenPaths = new ArrayList<String>();
+		String result = tree.data;
+		
+		while (!tree.children.isEmpty())
 		{
-			childrenPaths.add(getTraversalPreOrderPath(child));
+			Node child = tree.children.remove(0);
+			result += getTraversalPreOrderPath(child);
 		}
-			
-		return tree.data + childrenPaths;
+		
+		return result;
 	}
+
 }
