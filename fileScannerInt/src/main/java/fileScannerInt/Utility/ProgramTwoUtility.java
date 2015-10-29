@@ -22,7 +22,7 @@ public class ProgramTwoUtility
 		
 	}
 
-	private static String getTraversalBreadthFirstPath(Node tree)
+	public static String getTraversalBreadthFirstPath(Node tree)
 	{
 		String result = "";
 		Queue<Node> queue= new LinkedList<Node>();
@@ -41,7 +41,7 @@ public class ProgramTwoUtility
 		return result;
 	}
 
-	private static String getTraversalPreOrderPath(Node tree)
+	public static String getTraversalPreOrderPath(Node tree)
 	{
 		//List<String> childrenPaths = new ArrayList<String>();
 		String result = tree.data;

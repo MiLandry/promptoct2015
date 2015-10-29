@@ -3,6 +3,7 @@
   <groupId>promptoct2015</groupId>
   <artifactId>promptoct2015</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+
   <build>
     <sourceDirectory>fileScannerInt/src/main/java</sourceDirectory>
     <plugins>
@@ -12,8 +13,21 @@
         <configuration>
           <source>1.7</source>
           <target>1.7</target>
-        </configuration>
+
+        </configuration> 
       </plugin>
+          <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-jar-plugin</artifactId>
+	<version>2.4</version>
+	<configuration>
+	  <archive>
+	    <manifest>
+		<mainClass>fileScannerInt.main.Main</mainClass>
+	    </manifest>
+	  </archive>
+	</configuration>
+    </plugin>
     </plugins>
   </build>
   <dependencies>
