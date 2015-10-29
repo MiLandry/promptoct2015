@@ -33,7 +33,9 @@ public class Main
 		if (input.equals("1"))
 		{
 			System.out.println(
-					"This program will determine whether or not a give file of integers contains two integers which sum to zero."
+					"This program will determine whether or not a given file of integers"
+					+ " \n contains two integers which sum to zero."
+					+ " \n eg 'true.txt'"
 							+ "\n type /exit to quit."
 					);
 			boolean cont = true;
